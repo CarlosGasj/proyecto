@@ -5,10 +5,10 @@ import dash_bootstrap_components as dbc
 import pandas as pd
 import plotly.express as px
 from dash.dependencies import Input, Output
-import dbiot
+import conexion_mongo
 import plotly.graph_objs as go
 
-df = pd.DataFrame(list(dbiot.consultar_sensore()))
+df = pd.DataFrame(list(conexion_mongo.consultar_datos()))
 
 
 def create_dash(flask_app):
@@ -16,7 +16,7 @@ def create_dash(flask_app):
                     url_base_pathname="/dashb/")
 
     app.layout = html.Div(children=[
-        html.H1('Monitoreo del Sistema de IoT', style={'textAlign': 'center'}),
+        html.H1('Monitoreo del Tiempo', style={'textAlign': 'center'}),
         html.Br(),
         dcc.Dropdown(
             options=[{'label': i, 'value': i} for i in df.columns],
