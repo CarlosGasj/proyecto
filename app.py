@@ -166,6 +166,7 @@ def datos():
     Usuario = request.args.get('Usuario')
     contra = request.args.get('contra')
     ubi = request.args.get('ubicacion')
+    plag="0"
     usuario_encontrado = collection.find_one({"usuario": Usuario})
 
     if Usuario == "" or contra == "" or ubi == "":
@@ -179,7 +180,7 @@ def datos():
             "usuario": Usuario,
             "contrasenia": contra,
             "ubicacion": ubi
-            "plag":"0"
+            "plag":plag
         }
         collection.insert_one(data)
         return render_template("index.html")
