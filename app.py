@@ -98,11 +98,11 @@ def usuario():
             return render_template("perfil.html", today=today, f=f, g=g, h=h, i=i, j=j, l=l)
         else:
              f = "No se encontro ningun tipo de problema en el area"
-                g = "No se requiere de ningun tipo de atencion"
-                h =""
-                i=""
-                j=""
-                l=""
+             g = "No se requiere de ningun tipo de atencion"
+             h =""
+             i=""
+             j=""
+             l=""
         return render_template("perfil.html", today=today, f=f, g=g, h=h, i=i, j=j, l=l)
     else:
         n = "Usuario o contraseña incorrectos"
@@ -238,11 +238,11 @@ def perfil():
             return render_template("perfil.html", today=today, f=f, g=g, h=h, i=i, j=j, l=l)
         else:
              f = "No se encontro ningun tipo de problema en el area"
-                g = "No se requiere de ningun tipo de atencion"
-                h =""
-                i=""
-                j=""
-                l=""
+             g = "No se requiere de ningun tipo de atencion"
+             h =""
+             i=""
+             j=""
+             l=""
         return render_template("perfil.html", today=today, f=f, g=g, h=h, i=i, j=j, l=l)
 
 
