@@ -46,7 +46,7 @@ def usuario():
     # Esto lo hacemos con "request.args.get"
     nombreUser = request.args.get('nombreUser')
     contraseña = request.args.get('contrasenia')
-    usuario_encontrado = collection.find_one({"usuario": nombreUser}
+    usuario_encontrado = collection.find_one({"usuario": nombreUser})
     if usuario_encontrado and usuario_encontrado["contrasenia"] == contraseña:
         if a == "n":
             f = "El tipo de plaga que se encontro fue Gusano cogollero"
