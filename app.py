@@ -47,52 +47,62 @@ def usuario():
     nombreUser = request.args.get('nombreUser')
     contraseña = request.args.get('contrasenia')
     usuario_encontrado = collection.find_one({"usuario": nombreUser})
+    plaga = collection.find_one({"usuario": nombreUser})
     if usuario_encontrado and usuario_encontrado["contrasenia"] == contraseña:
-        if a == "n":
-            f = "El tipo de plaga que se encontro fue Gusano cogollero"
-            l = "Se recomienda llevar a cabo una fumigacion. A continuacion se recomiendan algunos insecticidas"
-            g = "Clorpirifos: Es un insecticida organofosforado que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
-            h = "Lambda-cihalotrina: Es un insecticida piretroide que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa atacando el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
-            i = "Emamectina benzoato: Es un insecticida de la familia de las avermectinas que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o inyectado en el suelo."
-            j = "Deltametrina: Es un insecticida piretroide que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
+        if plaga and plaga["plag"] >= 33:
+            if a == "n":
+                f = "El tipo de plaga que se encontro fue Gusano cogollero"
+                l = "Se recomienda llevar a cabo una fumigacion. A continuacion se recomiendan algunos insecticidas"
+                g = "Clorpirifos: Es un insecticida organofosforado que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
+                h = "Lambda-cihalotrina: Es un insecticida piretroide que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa atacando el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
+                i = "Emamectina benzoato: Es un insecticida de la familia de las avermectinas que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o inyectado en el suelo."
+                j = "Deltametrina: Es un insecticida piretroide que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
 
-        elif a == "huitla":
-            f = "Se detecto un brote de huitlacoche en el área"
-            l = "Se recomienda llevar a cabo una fumigacion. A continuacion se recomiendan algunos pesticidas"
-            g = "Azoxistrobina: actúa inhibiendo la respiración mitocondrial de los hongos, lo que interfiere en su capacidad para generar energía, crecer y reproducirse. Es efectiva contra una amplia gama de hongos, incluyendo oomicetos, ascomicetos y basidiomicetos, y se utiliza para el control de enfermedades como mildiu, roya, manchas foliares y otras infecciones fungosas en diferentes cultivos."
-            h = "Clorotalonil:  actúa como un inhibidor de la respiración mitocondrial de los hongos, lo que interfiere en su capacidad para generar energía, crecer y reproducirse. Es efectivo contra una amplia gama de hongos, incluyendo oomicetos, ascomicetos y basidiomicetos, y se utiliza para el control de enfermedades como mildiu, roya, manchas foliares y otras infecciones fungosas en diferentes cultivos."
-            i = "Tebuconazol: es un fungicida sistémico preventivo y curativo, recomendado para el control de enfermedades en vides, viñas, frutales y pinos señalados en esta etiqueta, así como también puede ser utilizado en tratamiento de postcosecha en cerezas, duraznos, ciruelas y nectarines."
-            j = "Fludioxonil: actúa como un inhibidor de la germinación de esporas de hongos, lo que impide su capacidad para colonizar las plantas y causar infecciones. Es efectivo contra una amplia gama de hongos, incluyendo ascomicetos y basidiomicetos, y se utiliza para el control de enfermedades como podredumbre de raíz, podredumbre de frutas y otros problemas fungosos en diferentes cultivos."
+            elif a == "huitla":
+                f = "Se detecto un brote de huitlacoche en el área"
+                l = "Se recomienda llevar a cabo una fumigacion. A continuacion se recomiendan algunos pesticidas"
+                g = "Azoxistrobina: actúa inhibiendo la respiración mitocondrial de los hongos, lo que interfiere en su capacidad para generar energía, crecer y reproducirse. Es efectiva contra una amplia gama de hongos, incluyendo oomicetos, ascomicetos y basidiomicetos, y se utiliza para el control de enfermedades como mildiu, roya, manchas foliares y otras infecciones fungosas en diferentes cultivos."
+                h = "Clorotalonil:  actúa como un inhibidor de la respiración mitocondrial de los hongos, lo que interfiere en su capacidad para generar energía, crecer y reproducirse. Es efectivo contra una amplia gama de hongos, incluyendo oomicetos, ascomicetos y basidiomicetos, y se utiliza para el control de enfermedades como mildiu, roya, manchas foliares y otras infecciones fungosas en diferentes cultivos."
+                i = "Tebuconazol: es un fungicida sistémico preventivo y curativo, recomendado para el control de enfermedades en vides, viñas, frutales y pinos señalados en esta etiqueta, así como también puede ser utilizado en tratamiento de postcosecha en cerezas, duraznos, ciruelas y nectarines."
+                j = "Fludioxonil: actúa como un inhibidor de la germinación de esporas de hongos, lo que impide su capacidad para colonizar las plantas y causar infecciones. Es efectivo contra una amplia gama de hongos, incluyendo ascomicetos y basidiomicetos, y se utiliza para el control de enfermedades como podredumbre de raíz, podredumbre de frutas y otros problemas fungosos en diferentes cultivos."
 
-        elif a == "b":
-            f = "El tipo de plaga que se encontro fue Gusano elotero"
-            l = "Se recomienda llevar a cabo una fumigacion. A continuacion se recomiendan algunos insecticidas"
-            g = "Clorpirifos: Es un insecticida organofosforado que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
-            h = "Lambda-cihalotrina: Es un insecticida piretroide que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa atacando el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
-            i = "Emamectina benzoato: Es un insecticida de la familia de las avermectinas que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o inyectado en el suelo."
-            j = "Deltametrina: Es un insecticida piretroide que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
+            elif a == "b":
+                f = "El tipo de plaga que se encontro fue Gusano elotero"
+                l = "Se recomienda llevar a cabo una fumigacion. A continuacion se recomiendan algunos insecticidas"
+                g = "Clorpirifos: Es un insecticida organofosforado que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
+                h = "Lambda-cihalotrina: Es un insecticida piretroide que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa atacando el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
+                i = "Emamectina benzoato: Es un insecticida de la familia de las avermectinas que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o inyectado en el suelo."
+                j = "Deltametrina: Es un insecticida piretroide que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
 
-        elif a == "a":
-            l = "Se recomienda llevar a cabo una fumigacion. A continuacion se recomiendan algunos insecticidas"
-            f = "El tipo de plaga que se encontro fue Gusano soldado"
-            g = "Bacillus thuringiensis (Bt): Es un insecticida biológico derivado de una bacteria del suelo que es efectivo contra muchas especies de larvas de insectos, incluyendo las de gusanos soldados. Actúa como una toxina que afecta el sistema digestivo del insecto, provocando su muerte. Se aplica en forma de pulverización foliar."
-            h = "Deltametrina: Es un insecticida piretroide que actúa sobre el sistema nervioso del insecto, provocando una parálisis y muerte. Se aplica en forma de pulverización foliar o en forma de gránulos en el suelo."
-            i = "Clorpirifos: Es un insecticida organofosforado que actúa como un inhibidor de la colinesterasa en el sistema nervioso del insecto, causando parálisis y muerte. Se aplica en forma de pulverización foliar."
-            j = "Carbaryl: Es un insecticida carbamato que actúa sobre el sistema nervioso del insecto, provocando una parálisis y muerte. Se aplica en forma de pulverización foliar."
-        elif a == "c":
-            l = "Se recomienda llevar a cabo una fumigacion. A continuacion se recomiendan algunos insecticidas"
-            f = "El tipo de plaga que se encontro fue Araña roja"
-            g = "Acaricidas organofosforados: Ejemplos de acaricidas organofosforados utilizados para el control de la araña roja incluyen clorpirifos, diazinón, malatión y azinfos-metilo. Estos insecticidas actúan interfiriendo con el sistema nervioso del ácaro, causando parálisis y muerte."
-            h = "Acaricidas piretroides: Ejemplos de acaricidas piretroides utilizados para el control de la araña roja incluyen bifentrina, cipermetrina, y permetrina. Estos insecticidas actúan sobre el sistema nervioso del ácaro, provocando parálisis y muerte."
-            i = "Acaricidas organoclorados: Ejemplos de acaricidas organoclorados utilizados para el control de la araña roja incluyen dicofol y clordecona. Estos insecticidas actúan interfiriendo con el sistema nervioso del ácaro, causando parálisis y muerte."
-            j = "Acaricidas carbamatos: Ejemplos de acaricidas carbamatos utilizados para el control de la araña roja incluyen propoxur y carbaril. Estos insecticidas actúan interfiriendo con el sistema nervioso del ácaro, provocando parálisis y muerte."
+            elif a == "a":
+                l = "Se recomienda llevar a cabo una fumigacion. A continuacion se recomiendan algunos insecticidas"
+                f = "El tipo de plaga que se encontro fue Gusano soldado"
+                g = "Bacillus thuringiensis (Bt): Es un insecticida biológico derivado de una bacteria del suelo que es efectivo contra muchas especies de larvas de insectos, incluyendo las de gusanos soldados. Actúa como una toxina que afecta el sistema digestivo del insecto, provocando su muerte. Se aplica en forma de pulverización foliar."
+                h = "Deltametrina: Es un insecticida piretroide que actúa sobre el sistema nervioso del insecto, provocando una parálisis y muerte. Se aplica en forma de pulverización foliar o en forma de gránulos en el suelo."
+                i = "Clorpirifos: Es un insecticida organofosforado que actúa como un inhibidor de la colinesterasa en el sistema nervioso del insecto, causando parálisis y muerte. Se aplica en forma de pulverización foliar."
+                j = "Carbaryl: Es un insecticida carbamato que actúa sobre el sistema nervioso del insecto, provocando una parálisis y muerte. Se aplica en forma de pulverización foliar."
+            elif a == "c":
+                l = "Se recomienda llevar a cabo una fumigacion. A continuacion se recomiendan algunos insecticidas"
+                f = "El tipo de plaga que se encontro fue Araña roja"
+                g = "Acaricidas organofosforados: Ejemplos de acaricidas organofosforados utilizados para el control de la araña roja incluyen clorpirifos, diazinón, malatión y azinfos-metilo. Estos insecticidas actúan interfiriendo con el sistema nervioso del ácaro, causando parálisis y muerte."
+                h = "Acaricidas piretroides: Ejemplos de acaricidas piretroides utilizados para el control de la araña roja incluyen bifentrina, cipermetrina, y permetrina. Estos insecticidas actúan sobre el sistema nervioso del ácaro, provocando parálisis y muerte."
+                i = "Acaricidas organoclorados: Ejemplos de acaricidas organoclorados utilizados para el control de la araña roja incluyen dicofol y clordecona. Estos insecticidas actúan interfiriendo con el sistema nervioso del ácaro, causando parálisis y muerte."
+                j = "Acaricidas carbamatos: Ejemplos de acaricidas carbamatos utilizados para el control de la araña roja incluyen propoxur y carbaril. Estos insecticidas actúan interfiriendo con el sistema nervioso del ácaro, provocando parálisis y muerte."
+            else:
+                f = "No se encontro ningun tipo de problema en el area"
+                g = "No se requiere de ningun tipo de atencion"
+                h =""
+                i=""
+                j=""
+                l=""
+            return render_template("perfil.html", today=today, f=f, g=g, h=h, i=i, j=j, l=l)
         else:
-            f = "No se encontro ningun tipo de problema en el area"
-            g = "No se requiere de ningun tipo de atencion"
-            h =""
-            i=""
-            j=""
-            l=""
+             f = "No se encontro ningun tipo de problema en el area"
+                g = "No se requiere de ningun tipo de atencion"
+                h =""
+                i=""
+                j=""
+                l=""
         return render_template("perfil.html", today=today, f=f, g=g, h=h, i=i, j=j, l=l)
     else:
         n = "Usuario o contraseña incorrectos"
@@ -169,6 +179,7 @@ def datos():
             "usuario": Usuario,
             "contrasenia": contra,
             "ubicacion": ubi
+            "plag":"0"
         }
         collection.insert_one(data)
         return render_template("index.html")
@@ -176,47 +187,63 @@ def datos():
 
 @app.route('/perfil1')
 def perfil():
-    if a == "n":
-        f = "El tipo de plaga que se encontro fue Gusano cogollero"
-        l = "Se recomienda llevar a cabo una fumigacion. A continuacion se recomiendan algunos insecticidas"
-        g = "Clorpirifos: Es un insecticida organofosforado que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
-        h = "Lambda-cihalotrina: Es un insecticida piretroide que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa atacando el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
-        i = "Emamectina benzoato: Es un insecticida de la familia de las avermectinas que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o inyectado en el suelo."
-        j = "Deltametrina: Es un insecticida piretroide que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
+    collection = db['usuario']
+    plaga = collection.find_one({"usuario": nombreUser})
+    if plaga and plaga["plag"] >= 33:
+            if a == "n":
+                f = "El tipo de plaga que se encontro fue Gusano cogollero"
+                l = "Se recomienda llevar a cabo una fumigacion. A continuacion se recomiendan algunos insecticidas"
+                g = "Clorpirifos: Es un insecticida organofosforado que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
+                h = "Lambda-cihalotrina: Es un insecticida piretroide que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa atacando el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
+                i = "Emamectina benzoato: Es un insecticida de la familia de las avermectinas que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o inyectado en el suelo."
+                j = "Deltametrina: Es un insecticida piretroide que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
 
-    elif a == "b":
-        f = "El tipo de plaga que se encontro fue Gusano elotero"
-        l = "Se recomienda llevar a cabo una fumigacion. A continuacion se recomiendan algunos insecticidas"
-        g = "Clorpirifos: Es un insecticida organofosforado que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
-        h = "Lambda-cihalotrina: Es un insecticida piretroide que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa atacando el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
-        i = "Emamectina benzoato: Es un insecticida de la familia de las avermectinas que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o inyectado en el suelo."
-        j = "Deltametrina: Es un insecticida piretroide que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
-    elif a == "huitla":
-        f = "Se detecto un brote de huitlacoche en el área"
-        l = "Se recomienda llevar a cabo una fumigacion. A continuacion se recomiendan algunos pesticidas"
-        g = "Azoxistrobina: actúa inhibiendo la respiración mitocondrial de los hongos, lo que interfiere en su capacidad para generar energía, crecer y reproducirse. Es efectiva contra una amplia gama de hongos, incluyendo oomicetos, ascomicetos y basidiomicetos, y se utiliza para el control de enfermedades como mildiu, roya, manchas foliares y otras infecciones fungosas en diferentes cultivos."
-        h = "Clorotalonil:  actúa como un inhibidor de la respiración mitocondrial de los hongos, lo que interfiere en su capacidad para generar energía, crecer y reproducirse. Es efectivo contra una amplia gama de hongos, incluyendo oomicetos, ascomicetos y basidiomicetos, y se utiliza para el control de enfermedades como mildiu, roya, manchas foliares y otras infecciones fungosas en diferentes cultivos."
-        i = "Tebuconazol: es un fungicida sistémico preventivo y curativo, recomendado para el control de enfermedades en vides, viñas, frutales y pinos señalados en esta etiqueta, así como también puede ser utilizado en tratamiento de postcosecha en cerezas, duraznos, ciruelas y nectarines."
-        j = "Fludioxonil: actúa como un inhibidor de la germinación de esporas de hongos, lo que impide su capacidad para colonizar las plantas y causar infecciones. Es efectivo contra una amplia gama de hongos, incluyendo ascomicetos y basidiomicetos, y se utiliza para el control de enfermedades como podredumbre de raíz, podredumbre de frutas y otros problemas fungosos en diferentes cultivos."
+            elif a == "huitla":
+                f = "Se detecto un brote de huitlacoche en el área"
+                l = "Se recomienda llevar a cabo una fumigacion. A continuacion se recomiendan algunos pesticidas"
+                g = "Azoxistrobina: actúa inhibiendo la respiración mitocondrial de los hongos, lo que interfiere en su capacidad para generar energía, crecer y reproducirse. Es efectiva contra una amplia gama de hongos, incluyendo oomicetos, ascomicetos y basidiomicetos, y se utiliza para el control de enfermedades como mildiu, roya, manchas foliares y otras infecciones fungosas en diferentes cultivos."
+                h = "Clorotalonil:  actúa como un inhibidor de la respiración mitocondrial de los hongos, lo que interfiere en su capacidad para generar energía, crecer y reproducirse. Es efectivo contra una amplia gama de hongos, incluyendo oomicetos, ascomicetos y basidiomicetos, y se utiliza para el control de enfermedades como mildiu, roya, manchas foliares y otras infecciones fungosas en diferentes cultivos."
+                i = "Tebuconazol: es un fungicida sistémico preventivo y curativo, recomendado para el control de enfermedades en vides, viñas, frutales y pinos señalados en esta etiqueta, así como también puede ser utilizado en tratamiento de postcosecha en cerezas, duraznos, ciruelas y nectarines."
+                j = "Fludioxonil: actúa como un inhibidor de la germinación de esporas de hongos, lo que impide su capacidad para colonizar las plantas y causar infecciones. Es efectivo contra una amplia gama de hongos, incluyendo ascomicetos y basidiomicetos, y se utiliza para el control de enfermedades como podredumbre de raíz, podredumbre de frutas y otros problemas fungosos en diferentes cultivos."
 
-    elif a == "a":
-        l = "Se recomienda llevar a cabo una fumigacion. A continuacion se recomiendan algunos insecticidas"
-        f = "El tipo de plaga que se encontro fue Gusano soldado"
-        g = "Bacillus thuringiensis (Bt): Es un insecticida biológico derivado de una bacteria del suelo que es efectivo contra muchas especies de larvas de insectos, incluyendo las de gusanos soldados. Actúa como una toxina que afecta el sistema digestivo del insecto, provocando su muerte. Se aplica en forma de pulverización foliar."
-        h = "Deltametrina: Es un insecticida piretroide que actúa sobre el sistema nervioso del insecto, provocando una parálisis y muerte. Se aplica en forma de pulverización foliar o en forma de gránulos en el suelo."
-        i = "Clorpirifos: Es un insecticida organofosforado que actúa como un inhibidor de la colinesterasa en el sistema nervioso del insecto, causando parálisis y muerte. Se aplica en forma de pulverización foliar."
-        j = "Carbaryl: Es un insecticida carbamato que actúa sobre el sistema nervioso del insecto, provocando una parálisis y muerte. Se aplica en forma de pulverización foliar."
-    elif a == "c":
-        f = "El tipo de plaga que se encontro fue Araña roja"
-        l = "Se recomienda llevar a cabo una fumigacion. A continuacion se recomiendan algunos insecticidas"
-        g = "Acaricidas organofosforados: Ejemplos de acaricidas organofosforados utilizados para el control de la araña roja incluyen clorpirifos, diazinón, malatión y azinfos-metilo. Estos insecticidas actúan interfiriendo con el sistema nervioso del ácaro, causando parálisis y muerte."
-        h = "Acaricidas piretroides: Ejemplos de acaricidas piretroides utilizados para el control de la araña roja incluyen bifentrina, cipermetrina, y permetrina. Estos insecticidas actúan sobre el sistema nervioso del ácaro, provocando parálisis y muerte."
-        i = "Acaricidas organoclorados: Ejemplos de acaricidas organoclorados utilizados para el control de la araña roja incluyen dicofol y clordecona. Estos insecticidas actúan interfiriendo con el sistema nervioso del ácaro, causando parálisis y muerte."
-        j = "Acaricidas carbamatos: Ejemplos de acaricidas carbamatos utilizados para el control de la araña roja incluyen propoxur y carbaril. Estos insecticidas actúan interfiriendo con el sistema nervioso del ácaro, provocando parálisis y muerte."
-    else:
-        f = "No se encontro ningun tipo de problema en el area"
-        g = "No se requiere de ningun tipo de atencion"
-    return render_template("perfil.html", today=today, f=f, g=g, h=h, i=i, j=j, l=l)
+            elif a == "b":
+                f = "El tipo de plaga que se encontro fue Gusano elotero"
+                l = "Se recomienda llevar a cabo una fumigacion. A continuacion se recomiendan algunos insecticidas"
+                g = "Clorpirifos: Es un insecticida organofosforado que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
+                h = "Lambda-cihalotrina: Es un insecticida piretroide que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa atacando el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
+                i = "Emamectina benzoato: Es un insecticida de la familia de las avermectinas que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o inyectado en el suelo."
+                j = "Deltametrina: Es un insecticida piretroide que se utiliza para el control del gusano cogollero en diferentes cultivos. Actúa interfiriendo con el sistema nervioso del insecto y puede ser aplicado en forma de spray o granulado."
+
+            elif a == "a":
+                l = "Se recomienda llevar a cabo una fumigacion. A continuacion se recomiendan algunos insecticidas"
+                f = "El tipo de plaga que se encontro fue Gusano soldado"
+                g = "Bacillus thuringiensis (Bt): Es un insecticida biológico derivado de una bacteria del suelo que es efectivo contra muchas especies de larvas de insectos, incluyendo las de gusanos soldados. Actúa como una toxina que afecta el sistema digestivo del insecto, provocando su muerte. Se aplica en forma de pulverización foliar."
+                h = "Deltametrina: Es un insecticida piretroide que actúa sobre el sistema nervioso del insecto, provocando una parálisis y muerte. Se aplica en forma de pulverización foliar o en forma de gránulos en el suelo."
+                i = "Clorpirifos: Es un insecticida organofosforado que actúa como un inhibidor de la colinesterasa en el sistema nervioso del insecto, causando parálisis y muerte. Se aplica en forma de pulverización foliar."
+                j = "Carbaryl: Es un insecticida carbamato que actúa sobre el sistema nervioso del insecto, provocando una parálisis y muerte. Se aplica en forma de pulverización foliar."
+            elif a == "c":
+                l = "Se recomienda llevar a cabo una fumigacion. A continuacion se recomiendan algunos insecticidas"
+                f = "El tipo de plaga que se encontro fue Araña roja"
+                g = "Acaricidas organofosforados: Ejemplos de acaricidas organofosforados utilizados para el control de la araña roja incluyen clorpirifos, diazinón, malatión y azinfos-metilo. Estos insecticidas actúan interfiriendo con el sistema nervioso del ácaro, causando parálisis y muerte."
+                h = "Acaricidas piretroides: Ejemplos de acaricidas piretroides utilizados para el control de la araña roja incluyen bifentrina, cipermetrina, y permetrina. Estos insecticidas actúan sobre el sistema nervioso del ácaro, provocando parálisis y muerte."
+                i = "Acaricidas organoclorados: Ejemplos de acaricidas organoclorados utilizados para el control de la araña roja incluyen dicofol y clordecona. Estos insecticidas actúan interfiriendo con el sistema nervioso del ácaro, causando parálisis y muerte."
+                j = "Acaricidas carbamatos: Ejemplos de acaricidas carbamatos utilizados para el control de la araña roja incluyen propoxur y carbaril. Estos insecticidas actúan interfiriendo con el sistema nervioso del ácaro, provocando parálisis y muerte."
+            else:
+                f = "No se encontro ningun tipo de problema en el area"
+                g = "No se requiere de ningun tipo de atencion"
+                h =""
+                i=""
+                j=""
+                l=""
+            return render_template("perfil.html", today=today, f=f, g=g, h=h, i=i, j=j, l=l)
+        else:
+             f = "No se encontro ningun tipo de problema en el area"
+                g = "No se requiere de ningun tipo de atencion"
+                h =""
+                i=""
+                j=""
+                l=""
+        return render_template("perfil.html", today=today, f=f, g=g, h=h, i=i, j=j, l=l)
 
 
 @app.route("/m")
