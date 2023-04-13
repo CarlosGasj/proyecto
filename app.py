@@ -192,7 +192,8 @@ def datos():
 
 
 @app.route('/perfil1')
-def perfil():collection = db['usuario']
+def perfil():
+    collection = db['usuario']
     plag=32
     usuario_encontrado = collection.find_one({"usuario": nombreUser})
     if usuario_encontrado and usuario_encontrado["plag"] >= plag:
@@ -249,7 +250,7 @@ def perfil():collection = db['usuario']
         i = ""
         j = ""
         l = ""
-        return render_template("perfil.html", today=today, f=f, g=g, h=h, i=i, j=j, l=l)
+    return render_template("perfil.html", today=today, f=f, g=g, h=h, i=i, j=j, l=l)
 
 
 
