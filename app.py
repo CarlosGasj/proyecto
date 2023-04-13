@@ -179,7 +179,7 @@ def datos():
         data = {
             "usuario": Usuario,
             "contrasenia": contra,
-            "ubicacion": ubi
+            "ubicacion": ubi,
             "plag":plag
         }
         collection.insert_one(data)
