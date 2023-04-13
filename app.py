@@ -155,7 +155,7 @@ def info():
         else:
             f = "No se encontro ningun tipo de problema en el area"
     else:
-    f = "No se encontro ningun tipo de problema en el area"
+        f = "No se encontro ningun tipo de problema en el area"
     return render_template("informacion.html", f=f)
 
 
