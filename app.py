@@ -112,6 +112,7 @@ def usuario():
 
 @app.route('/informacion')
 def info():
+    collection = db['usuario']
     plag=32
     usuario_encontrado = collection.find_one({"usuario": nombreUser})
     if usuario_encontrado and usuario_encontrado["plag"] >= plag:
